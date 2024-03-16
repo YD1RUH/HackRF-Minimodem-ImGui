@@ -7,14 +7,13 @@
 # GNU Radio Python Flow Graph
 # Title: receive using hackrf
 # Author: yd1ruh
-# GNU Radio version: 3.10.4.0
+# GNU Radio version: 3.8.2.0
 
 from gnuradio import analog
 from gnuradio import audio
 from gnuradio import filter
 from gnuradio.filter import firdes
 from gnuradio import gr
-from gnuradio.fft import window
 import sys
 import signal
 from argparse import ArgumentParser
@@ -33,7 +32,7 @@ freq_rx = int(vars(args).get(svc_name))
 class rx_fm(gr.top_block):
 
     def __init__(self):
-        gr.top_block.__init__(self, "receive using hackrf", catch_exceptions=True)
+        gr.top_block.__init__(self, "receive using hackrf")
 
         ##################################################
         # Variables
@@ -46,13 +45,13 @@ class rx_fm(gr.top_block):
         self.rational_resampler_xxx_1 = filter.rational_resampler_fff(
                 interpolation=6,
                 decimation=10,
-                taps=[],
-                fractional_bw=0)
+                taps=None,
+                fractional_bw=None)
         self.rational_resampler_xxx_0 = filter.rational_resampler_ccc(
                 interpolation=1,
                 decimation=100,
-                taps=[],
-                fractional_bw=0)
+                taps=None,
+                fractional_bw=None)
         self.osmosdr_source_0 = osmosdr.source(
             args="numchan=" + str(1) + " " + 'hackrf'
         )
@@ -63,9 +62,9 @@ class rx_fm(gr.top_block):
         self.osmosdr_source_0.set_dc_offset_mode(0, 0)
         self.osmosdr_source_0.set_iq_balance_mode(0, 0)
         self.osmosdr_source_0.set_gain_mode(False, 0)
-        self.osmosdr_source_0.set_gain(20, 0)
-        self.osmosdr_source_0.set_if_gain(40, 0)
-        self.osmosdr_source_0.set_bb_gain(40, 0)
+        self.osmosdr_source_0.set_gain(10, 0)
+        self.osmosdr_source_0.set_if_gain(20, 0)
+        self.osmosdr_source_0.set_bb_gain(20, 0)
         self.osmosdr_source_0.set_antenna('', 0)
         self.osmosdr_source_0.set_bandwidth(15000, 0)
         self.low_pass_filter_0 = filter.fir_filter_ccf(
@@ -75,15 +74,16 @@ class rx_fm(gr.top_block):
                 80000,
                 12500,
                 100,
-                window.WIN_HAMMING,
+                firdes.WIN_HAMMING,
                 6.76))
         self.audio_sink_0 = audio.sink(48000, 'pulse', True)
         self.analog_nbfm_rx_0 = analog.nbfm_rx(
         	audio_rate=80000,
         	quad_rate=80000,
-        	tau=(75e-6),
+        	tau=75e-6,
         	max_dev=5e3,
           )
+
 
 
         ##################################################
@@ -101,6 +101,7 @@ class rx_fm(gr.top_block):
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
+
 
 
 
