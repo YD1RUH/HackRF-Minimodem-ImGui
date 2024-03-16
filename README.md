@@ -11,7 +11,7 @@ Half-Duplex chatting using HackRF with GUI dearpygui.
 - DearPyGUI : `pip3 install dearpygui`
 - HackRF library : `sudo apt-get install hackrf libhackrf-dev`
 - GNURadio3.8 : [Installation guide](https://wiki.gnuradio.org/index.php/LinuxInstall)
-- SoapySDR : [Installation guide](https://github.com/pothosware/SoapySDR/wiki/BuildGuide#unix-instructions)
+- SoapySDR : [Installation guide](https://github.com/pothosware/SoapySDR/wiki/BuildGuide#get-the-source-code)
 - SoapySDR HackRF : [Installation guide](https://github.com/pothosware/SoapyHackRF/wiki#building-soapy-hack-rf)
 
 ## How To Use
