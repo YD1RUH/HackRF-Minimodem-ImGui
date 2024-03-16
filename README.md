@@ -5,7 +5,7 @@ Half-Duplex chatting using HackRF with GUI dearpygui.
 
 ## Requirement
 - Linux Operating System 
-- python3 : `apt install python3`
+- python3 : `sudo apt install python3`
 - minimodem : `sudo apt install minimodem`
 - xterm : `sudo apt install xterm`
 - DearPyGUI : `pip3 install dearpygui`
