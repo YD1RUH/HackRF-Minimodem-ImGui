@@ -1,6 +1,8 @@
 # HackRF-Minimodem-ImGui
 Half-Duplex chatting using HackRF with GUI dearpygui.
 
+![image](https://github.com/YD1RUH/HackRF-Minimodem-ImGui/blob/main/HackRF%20ImGUI%20minimodem.png)
+
 ## Requirement
 - Linux Operating System (64-bit)
 - python3 : `apt install python3`
