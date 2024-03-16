@@ -17,6 +17,7 @@ Half-Duplex chatting using HackRF with GUI dearpygui.
 ## How To Use
 - clone the source using `git clone https://github.com/YD1RUH/HackRF-Minimodem-ImGui`
 - go into the directory `cd HackRF-Minimodem-ImGui`
+- change branch support GNURadio3.10 `git checkout gnuradio-3.10`
 - make all file executable `chmod +x *`
 - Open terminal, then run `./Minimodem-ImGUI`
 
