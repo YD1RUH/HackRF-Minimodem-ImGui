@@ -61,8 +61,9 @@ class tx_fm(gr.top_block):
         self.osmosdr_sink_0.set_bb_gain(20, 0)
         self.osmosdr_sink_0.set_antenna('', 0)
         self.osmosdr_sink_0.set_bandwidth(12500, 0)
-        current = os.getcwd()
-        self.blocks_wavfile_source_0 = blocks.wavfile_source(current+'/send.wav', False)
+        #current = os.getcwd()
+        #self.blocks_wavfile_source_0 = blocks.wavfile_source(current+'/send.wav', False)
+        self.blocks_wavfile_source_0 = blocks.wavfile_source('/tmp/send.wav', False)
         self.blocks_multiply_const_vxx_0 = blocks.multiply_const_ff(1)
         self.analog_nbfm_tx_0 = analog.nbfm_tx(
         	audio_rate=48000,
