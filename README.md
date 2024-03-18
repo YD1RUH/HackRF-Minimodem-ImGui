@@ -1,7 +1,7 @@
 # HackRF-Minimodem-ImGui
 Half-Duplex chatting using HackRF with GUI dearpygui.
 
-![image](https://github.com/YD1RUH/HackRF-Minimodem-ImGui/blob/main/HackRF%20ImGUI%20minimodem.png)
+![image](https://github.com/YD1RUH/HackRF-Minimodem-ImGui/blob/main/screen.jpg)
 
 ## Requirement
 - Linux Operating System 
@@ -21,4 +21,5 @@ Half-Duplex chatting using HackRF with GUI dearpygui.
 - Open terminal, then run `./Minimodem-ImGUI`
 
 ## Next TODO
-- adding sending file support (only txt file)
+- ~~adding sending file support (only txt file)~~
+- ~~loopback audio while transmitting~~
