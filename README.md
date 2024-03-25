@@ -1,7 +1,7 @@
 # HackRF-Minimodem-ImGui
 Half-Duplex chatting using HackRF with GUI dearpygui.
 
-![image](https://github.com/YD1RUH/HackRF-Minimodem-ImGui/blob/main/screen.jpg)
+![image](https://github.com/YD1RUH/HackRF-Minimodem-ImGui/blob/support-hamlib/screen.jpg)
 
 ## Requirement
 - Linux Operating System 
